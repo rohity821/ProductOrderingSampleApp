@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MBProgressHUD
 
 class ViewController: UIViewController {
 
@@ -27,13 +28,21 @@ class ViewController: UIViewController {
         productList.tableFooterView = UIView();
         productList.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "productCell")
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         viewModel.updateProductList { [weak self] (productArr) in
             let observable = Observable.just(productArr)
             self?.setupCellConfiguration(observable)
+            self?.hideHUD()
         }
         
         setupCellTabHandling()
         setupCartObserver()
+    }
+    
+    func hideHUD() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
