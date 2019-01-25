@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductCell: UITableViewCell {
     
@@ -26,5 +27,7 @@ class ProductCell: UITableViewCell {
         if let formattedTipAmount = formatter.string(from: product.cost as NSNumber) {
             productPriceLabel.text = "\(formattedTipAmount)"
         }
+        productImageView.sd_setImage(with: URL(string: product.image), placeholderImage: UIImage(named: "placeholder"))
+
     }
 }
