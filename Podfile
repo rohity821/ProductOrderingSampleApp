@@ -7,15 +7,7 @@ target 'ProductOrderingApp' do
 
   # Pods for ProductOrderingApp
 	pod 'SDWebImage', '~> 4.0'
-
-  target 'ProductOrderingAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ProductOrderingAppUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
 
 end

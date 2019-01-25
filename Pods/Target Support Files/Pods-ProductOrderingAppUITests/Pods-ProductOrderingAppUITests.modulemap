@@ -1,6 +1,0 @@
-framework module Pods_ProductOrderingAppUITests {
-  umbrella header "Pods-ProductOrderingAppUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
