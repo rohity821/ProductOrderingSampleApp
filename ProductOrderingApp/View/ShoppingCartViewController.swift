@@ -35,7 +35,7 @@ class ShoppingCartViewController: UIViewController {
         }, completion: { (complete) in
             Cart.shared.addCartProductsToHistory()
             Cart.shared.removeAllProductsFromCart()
-            Toast(text: "Your purchase is successful", duration: Delay.short).show()
+            Toast(text: "“Your order has been placed", duration: Delay.short).show()
         })
     }
     
