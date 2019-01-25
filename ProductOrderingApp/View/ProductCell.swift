@@ -21,10 +21,10 @@ class ProductCell: UITableViewCell {
     }
     
     func configureCell(product: Product) {
-        productName.text = product.name
+        productName.text = product.productName
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        if let formattedTipAmount = formatter.string(from: product.cost as NSNumber) {
+        if let formattedTipAmount = formatter.string(from: product.price as NSNumber) {
             productPriceLabel.text = "\(formattedTipAmount)"
         }
         productImageView.sd_setImage(with: URL(string: product.image), placeholderImage: UIImage(named: "placeholder"))

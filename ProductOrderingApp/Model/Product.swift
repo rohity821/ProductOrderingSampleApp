@@ -13,11 +13,11 @@ struct ProductList:Codable {
 }
 
 struct Product: Codable, Equatable {
-    var name:String
-    var cost:Int
+    var productName:String
+    var price:Int
     var image : String
     
     static func == (lhs: Product, rhs: Product) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.productName == rhs.productName
     }
 }

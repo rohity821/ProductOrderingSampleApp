@@ -15,6 +15,7 @@ class CoreDataManager {
     }
     
     static let shared = CoreDataManager()
+    private let historyTask = HistoryTask()
     
     // MARK: - Core Data stack
     
@@ -56,5 +57,14 @@ class CoreDataManager {
                 }
             }
         }
+    }
+    
+    func addProductsToHistory(productArr:[Product]) {
+        historyTask.addProductsToHistory(productArr: productArr, context: CoreDataManager.shared.childContext)
+        saveChildContext()
+    }
+    
+    func fetchHistory() -> [OrderedProduct] {
+        return historyTask.fetchHistory(context:CoreDataManager.shared.childContext)
     }
 }
