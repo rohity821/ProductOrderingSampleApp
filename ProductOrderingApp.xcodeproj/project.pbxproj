@@ -19,6 +19,7 @@
 		73E82B7221FB79C400E0E46E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7121FB79C400E0E46E /* ProductCell.swift */; };
 		73E82B7521FB7B1400E0E46E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7421FB7B1400E0E46E /* Product.swift */; };
 		73E82B7A21FB7BA900E0E46E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7921FB7BA900E0E46E /* ProductViewModel.swift */; };
+		73E82B7D21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */; };
 		9AF0F3D78845D00FDF64E051 /* Pods_ProductOrderingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EDAE3CA37894CA61E709DA /* Pods_ProductOrderingApp.framework */; };
 		BB5590366097862EADA9C33D /* Pods_ProductOrderingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B591B53C153F0ABBB125B30 /* Pods_ProductOrderingAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		73E82B7121FB79C400E0E46E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		73E82B7421FB7B1400E0E46E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		73E82B7921FB7BA900E0E46E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
 		7B591B53C153F0ABBB125B30 /* Pods_ProductOrderingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductOrderingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7E1AEBEDB9AF66C60AC644 /* Pods-ProductOrderingAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductOrderingAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductOrderingAppUITests/Pods-ProductOrderingAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91842A72021A275C64DB7831 /* Pods-ProductOrderingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductOrderingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductOrderingAppTests/Pods-ProductOrderingAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		73E82B7021FB79B000E0E46E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73E82B7B21FB839000E0E46E /* View Extensions */,
 				73E82B4121FB716900E0E46E /* ViewController.swift */,
 				73E82B7121FB79C400E0E46E /* ProductCell.swift */,
 			);
@@ -197,6 +200,14 @@
 				73E82B7921FB7BA900E0E46E /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		73E82B7B21FB839000E0E46E /* View Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */,
+			);
+			path = "View Extensions";
 			sourceTree = "<group>";
 		};
 		F678F80D1B0B814C98B40BAD /* Frameworks */ = {
@@ -439,6 +450,7 @@
 				73E82B7221FB79C400E0E46E /* ProductCell.swift in Sources */,
 				73E82B7A21FB7BA900E0E46E /* ProductViewModel.swift in Sources */,
 				73E82B7521FB7B1400E0E46E /* Product.swift in Sources */,
+				73E82B7D21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift in Sources */,
 				73E82B4021FB716900E0E46E /* AppDelegate.swift in Sources */,
 				73E82B6F21FB728400E0E46E /* ProductAPI.swift in Sources */,
 			);
