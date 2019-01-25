@@ -20,6 +20,8 @@
 		73E82B7521FB7B1400E0E46E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7421FB7B1400E0E46E /* Product.swift */; };
 		73E82B7A21FB7BA900E0E46E /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7921FB7BA900E0E46E /* ProductViewModel.swift */; };
 		73E82B7D21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */; };
+		73E82B8021FB84D200E0E46E /* ProductOrderingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B7E21FB84D200E0E46E /* ProductOrderingApp.xcdatamodeld */; };
+		73E82B8321FB84FC00E0E46E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B8221FB84FC00E0E46E /* CoreDataManager.swift */; };
 		9AF0F3D78845D00FDF64E051 /* Pods_ProductOrderingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EDAE3CA37894CA61E709DA /* Pods_ProductOrderingApp.framework */; };
 		BB5590366097862EADA9C33D /* Pods_ProductOrderingAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B591B53C153F0ABBB125B30 /* Pods_ProductOrderingAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		73E82B7421FB7B1400E0E46E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		73E82B7921FB7BA900E0E46E /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
+		73E82B7F21FB84D200E0E46E /* ProductOrderingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductOrderingApp.xcdatamodel; sourceTree = "<group>"; };
+		73E82B8221FB84FC00E0E46E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7B591B53C153F0ABBB125B30 /* Pods_ProductOrderingAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductOrderingAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7E1AEBEDB9AF66C60AC644 /* Pods-ProductOrderingAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductOrderingAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductOrderingAppUITests/Pods-ProductOrderingAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91842A72021A275C64DB7831 /* Pods-ProductOrderingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductOrderingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductOrderingAppTests/Pods-ProductOrderingAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		73E82B3E21FB716800E0E46E /* ProductOrderingApp */ = {
 			isa = PBXGroup;
 			children = (
+				73E82B8121FB84EF00E0E46E /* CoreData */,
 				73E82B7821FB7B9200E0E46E /* ViewModel */,
 				73E82B7321FB7B0600E0E46E /* Model */,
 				73E82B7021FB79B000E0E46E /* View */,
@@ -146,6 +151,7 @@
 				73E82B4621FB716900E0E46E /* Assets.xcassets */,
 				73E82B4821FB716900E0E46E /* LaunchScreen.storyboard */,
 				73E82B4B21FB716900E0E46E /* Info.plist */,
+				73E82B7E21FB84D200E0E46E /* ProductOrderingApp.xcdatamodeld */,
 			);
 			path = ProductOrderingApp;
 			sourceTree = "<group>";
@@ -208,6 +214,14 @@
 				73E82B7C21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift */,
 			);
 			path = "View Extensions";
+			sourceTree = "<group>";
+		};
+		73E82B8121FB84EF00E0E46E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				73E82B8221FB84FC00E0E46E /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F678F80D1B0B814C98B40BAD /* Frameworks */ = {
@@ -449,8 +463,10 @@
 				73E82B4221FB716900E0E46E /* ViewController.swift in Sources */,
 				73E82B7221FB79C400E0E46E /* ProductCell.swift in Sources */,
 				73E82B7A21FB7BA900E0E46E /* ProductViewModel.swift in Sources */,
+				73E82B8021FB84D200E0E46E /* ProductOrderingApp.xcdatamodeld in Sources */,
 				73E82B7521FB7B1400E0E46E /* Product.swift in Sources */,
 				73E82B7D21FB83AF00E0E46E /* UIBarButtonItem+Badge.swift in Sources */,
+				73E82B8321FB84FC00E0E46E /* CoreDataManager.swift in Sources */,
 				73E82B4021FB716900E0E46E /* AppDelegate.swift in Sources */,
 				73E82B6F21FB728400E0E46E /* ProductAPI.swift in Sources */,
 			);
@@ -781,6 +797,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		73E82B7E21FB84D200E0E46E /* ProductOrderingApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				73E82B7F21FB84D200E0E46E /* ProductOrderingApp.xcdatamodel */,
+			);
+			currentVersion = 73E82B7F21FB84D200E0E46E /* ProductOrderingApp.xcdatamodel */;
+			path = ProductOrderingApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 73E82B3421FB716800E0E46E /* Project object */;
 }
