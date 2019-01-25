@@ -7,11 +7,13 @@ PODS:
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SDWebImage (~> 4.0)
+  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -19,13 +21,15 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SDWebImage
+    - Toaster
 
 SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 653d18c5a54f166eabaf5b2de6c1aadc453d51fc
+PODFILE CHECKSUM: d917e7990a9b54ae02591dea8db42793e34eaa74
 
 COCOAPODS: 1.5.3

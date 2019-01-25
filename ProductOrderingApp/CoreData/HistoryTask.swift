@@ -12,7 +12,7 @@ import CoreData
 class HistoryTask {
     
     private struct Constant {
-        static let historyEntity = "History"
+        static let historyEntity = "OrderHistory"
     }
     
     func addProductsToHistory(productArr:[Product], context: NSManagedObjectContext) {
@@ -50,6 +50,7 @@ class HistoryTask {
         let orderHistory = NSEntityDescription.insertNewObject(forEntityName: Constant.historyEntity, into: context) as? OrderHistory
         orderHistory?.productName = product.productName
         orderHistory?.price = Int64(product.price)
+        orderHistory?.image = product.image
         orderHistory?.date = date
     }
 }

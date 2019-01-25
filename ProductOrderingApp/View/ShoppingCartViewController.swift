@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import Toaster
 
 class ShoppingCartViewController: UIViewController {
         
@@ -28,12 +29,13 @@ class ShoppingCartViewController: UIViewController {
         setupCheckoutButton()
     }
     
-    @IBAction func checkoutProduct(_ sender: UIButton) {
+    @IBAction func buyNowButtonTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
-        }, completion: { [weak self] (complete) in
+        }, completion: { (complete) in
             Cart.shared.addCartProductsToHistory()
             Cart.shared.removeAllProductsFromCart()
+            Toast(text: "Your purchase is successful", duration: Delay.short).show()
         })
     }
     

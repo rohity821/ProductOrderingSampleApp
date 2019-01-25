@@ -78,6 +78,9 @@
                                 <state key="normal" title="Buy Now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyNowButtonTapped:" destination="jlt-MT-zKr" eventType="touchUpInside" id="0Pp-q5-V3a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,13 +107,28 @@
         <!--Order History-->
         <scene sceneID="PVW-1G-2yQ">
             <objects>
-                <viewController title="Order History" id="E19-4u-zsv" sceneMemberID="viewController">
+                <viewController title="Order History" id="E19-4u-zsv" customClass="OrderHistoryViewController" customModule="ProductOrderingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rKc-2s-w6M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xZT-ky-kSQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xZT-ky-kSQ" firstAttribute="top" secondItem="RiF-6X-eVR" secondAttribute="top" id="Gdn-xk-PYb"/>
+                            <constraint firstItem="RiF-6X-eVR" firstAttribute="trailing" secondItem="xZT-ky-kSQ" secondAttribute="trailing" id="Jrz-u5-7FX"/>
+                            <constraint firstItem="xZT-ky-kSQ" firstAttribute="leading" secondItem="RiF-6X-eVR" secondAttribute="leading" id="mbu-Tg-KGq"/>
+                            <constraint firstItem="RiF-6X-eVR" firstAttribute="bottom" secondItem="xZT-ky-kSQ" secondAttribute="bottom" id="pe4-9r-TkC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RiF-6X-eVR"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="xZT-ky-kSQ" id="hWa-5d-7Lg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4n6-Kx-gbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

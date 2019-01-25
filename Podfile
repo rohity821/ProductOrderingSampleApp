@@ -9,6 +9,7 @@ target 'ProductOrderingApp' do
 	pod 'SDWebImage', '~> 4.0'
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
+    pod 'Toaster'
 
 end
 
