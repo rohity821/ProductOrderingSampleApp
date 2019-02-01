@@ -47,6 +47,13 @@ class ViewController: UIViewController {
         }
     }
     
+
+    @IBAction func orderHistoryClicked(_ sender: UIBarButtonItem) {
+        let orderHistory = OrderHistoryViewController()
+        orderHistory.cartObject = self.cart;
+        self.navigationController?.pushViewController(orderHistory, animated: true);
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         cartButton.addBadge()
