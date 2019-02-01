@@ -14,14 +14,18 @@ class OrderHistoryViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     private let disposeBag = DisposeBag()
+    
+    var cartObject : (Cart & CartInterfaceProtocol)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "productCell")
         // Do any additional setup after loading the view.
-        let observable = Observable.just(Cart.shared.getHistoryProducts())
-        setupCellConfiguration(observable)
+        if let cart = cartObject {
+            let observable = Observable.just(cart.getHistoryProducts())
+            setupCellConfiguration(observable)
+        }
     }
     
     //MARK : private methods

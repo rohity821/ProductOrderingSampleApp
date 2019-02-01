@@ -16,6 +16,7 @@ class ShoppingCartViewController: UIViewController {
         
     @IBOutlet private var buyNowButton: UIButton!
     @IBOutlet private var tableView: UITableView!
+    var cartObject : (Cart & CartInterfaceProtocol)?
     
     private let disposeBag = DisposeBag()
     
@@ -24,19 +25,23 @@ class ShoppingCartViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "productCell")
-        let observable = Observable.just(Cart.shared.cartProducts.value)
-        setupCellConfiguration(observable)
+        if let cart = cartObject {
+            let observable = Observable.just(cart.cartProducts.value)
+            setupCellConfiguration(observable)
+        }
         setupCheckoutButton()
     }
     
     @IBAction func buyNowButtonTapped(_ sender: UIButton) {
+        if let cart = cartObject {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }, completion: { (complete) in
-            Cart.shared.addCartProductsToHistory()
-            Cart.shared.removeAllProductsFromCart()
+            cart.addCartProductsToHistory()
+            cart.removeAllProductsFromCart()
             Toast(text: "“Your order has been placed", duration: Delay.short).show()
         })
+    }
     }
     
     //MARK: private methods
@@ -51,7 +56,9 @@ class ShoppingCartViewController: UIViewController {
     }
     
     private func setupCheckoutButton() {
-        self.buyNowButton.isUserInteractionEnabled = Cart.shared.cartProducts.value.count > 0
-        self.buyNowButton.alpha = self.buyNowButton.isUserInteractionEnabled ? 1.0 : 0.4
+        if let cart = cartObject {
+            self.buyNowButton.isUserInteractionEnabled = cart.cartProducts.value.count > 0
+            self.buyNowButton.alpha = self.buyNowButton.isUserInteractionEnabled ? 1.0 : 0.4
+        }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		738AE0CA22040E02001B20AC /* CartInteraceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AE0C922040E02001B20AC /* CartInteraceProtocol.swift */; };
 		73E82B4021FB716900E0E46E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B3F21FB716900E0E46E /* AppDelegate.swift */; };
 		73E82B4221FB716900E0E46E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E82B4121FB716900E0E46E /* ViewController.swift */; };
 		73E82B4521FB716900E0E46E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73E82B4321FB716900E0E46E /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		0CC5869CBA9DB5F424A9671B /* Pods-ProductOrderingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductOrderingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductOrderingApp/Pods-ProductOrderingApp.release.xcconfig"; sourceTree = "<group>"; };
 		373F4C53DAB1F40815C18356 /* Pods_ProductOrderingAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductOrderingAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		738AE0C922040E02001B20AC /* CartInteraceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteraceProtocol.swift; sourceTree = "<group>"; };
 		73E82B3C21FB716800E0E46E /* ProductOrderingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductOrderingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E82B3F21FB716900E0E46E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73E82B4121FB716900E0E46E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		738AE0C822040DE3001B20AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				738AE0C922040E02001B20AC /* CartInteraceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		73E82B3321FB716800E0E46E = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		73E82B3E21FB716800E0E46E /* ProductOrderingApp */ = {
 			isa = PBXGroup;
 			children = (
+				738AE0C822040DE3001B20AC /* Protocols */,
 				73E82B8121FB84EF00E0E46E /* CoreData */,
 				73E82B7821FB7B9200E0E46E /* ViewModel */,
 				73E82B7321FB7B0600E0E46E /* Model */,
@@ -440,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738AE0CA22040E02001B20AC /* CartInteraceProtocol.swift in Sources */,
 				73E82B4221FB716900E0E46E /* ViewController.swift in Sources */,
 				73E82B7221FB79C400E0E46E /* ProductCell.swift in Sources */,
 				73E82B7A21FB7BA900E0E46E /* ProductViewModel.swift in Sources */,

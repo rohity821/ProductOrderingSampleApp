@@ -10,48 +10,47 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class Cart {
-    
-    static let shared = Cart()
-    
+class Cart : CartInterfaceProtocol {
     var cartProducts: BehaviorRelay<[Product]> = BehaviorRelay(value: [Product]())
+//    static let shared = Cart()
+//    var cartProducts = BehaviorRelay(value: [Product]())
     private var historyProducts: BehaviorRelay<[OrderedProduct]> = BehaviorRelay(value: [OrderedProduct]())
     
-    private init() {
+    init() {
         historyProducts.accept(CoreDataManager.shared.fetchHistory())
     }
     
     func addProductToCart(_ product: Product) {
-        Cart.shared.cartProducts.accept(Cart.shared.cartProducts.value + [product])
+        self.cartProducts.accept(self.cartProducts.value + [product])
     }
     
     func removeAllProductsFromCart() {
-        Cart.shared.cartProducts.accept([])
+        self.cartProducts.accept([])
     }
     
     func addCartProductsToHistory() {
-        CoreDataManager.shared.addProductsToHistory(productArr: Cart.shared.cartProducts.value)
+        CoreDataManager.shared.addProductsToHistory(productArr: self.cartProducts.value)
         var products = [OrderedProduct]()
         let date = Date()
-        for product in Cart.shared.cartProducts.value {
+        for product in self.cartProducts.value {
             let historyProduct = OrderedProduct(product: product, date: date)
             products.append(historyProduct)
         }
-        Cart.shared.historyProducts.accept(products + Cart.shared.historyProducts.value)
+        self.historyProducts.accept(products + self.historyProducts.value)
     }
     
     func removeStaleProductsFromHistory() {
-        let products = Cart.shared.historyProducts.value.filter {
+        let products = self.historyProducts.value.filter {
             if let historyDate = Calendar.current.date(byAdding: Calendar.Component.day, value: -3, to: Date()) {
                 return $0.date > historyDate
             }
             return false
         }
-        Cart.shared.historyProducts.accept(products)
+        self.historyProducts.accept(products)
     }
     
     func getHistoryProducts() -> [OrderedProduct] {
         removeStaleProductsFromHistory()
-        return Cart.shared.historyProducts.value
+        return self.historyProducts.value
     }
 }

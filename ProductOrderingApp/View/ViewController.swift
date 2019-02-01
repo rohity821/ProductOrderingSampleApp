@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private var cart : Cart & CartInterfaceProtocol = Cart()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -50,16 +52,30 @@ class ViewController: UIViewController {
         cartButton.addBadge()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "cartControllerSegue") {
+            if let destinationController = segue.destination as? ShoppingCartViewController {
+                destinationController.cartObject = self.cart
+            }
+        }
+        else if  (segue.identifier == "orderHistorySegue") {
+            if let destinationController = segue.destination as? OrderHistoryViewController {
+                destinationController.cartObject = self.cart
+            }
+        }
+    }
+    
     //MARK: private methods
     
     private func setupCartObserver() {
-        Cart.shared.cartProducts.asObservable().subscribe { (products) in
+        self.cart.cartProducts.asObservable().subscribe { (products) in
             self.updateCart()
             }.disposed(by: disposeBag)
     }
     
     private func updateCart() {
-        cartButton.updateBadgecount(count: Cart.shared.cartProducts.value.count)
+        cartButton.updateBadgecount(count: self.cart.cartProducts.value.count)
     }
     
     private func setupCellConfiguration(_ observable: Observable<[Product]>) {
@@ -89,7 +105,7 @@ class ViewController: UIViewController {
                 let cartPoint = cartView.convert(cartView.frame.origin, to: nil)
                 let center = CGPoint(x: cartPoint.x + cartView.frame.size.width/2, y: cartPoint.y + cartView.frame.size.height/2)
                 label.applyAddToCartAnimation(parentView: window, to: center, {
-                    Cart.shared.addProductToCart(product)
+                    self.cart.addProductToCart(product)
                 })
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

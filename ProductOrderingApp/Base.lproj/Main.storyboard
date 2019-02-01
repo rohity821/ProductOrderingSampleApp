@@ -36,12 +36,12 @@
                         <rightBarButtonItems>
                             <barButtonItem image="orderHistory" style="plain" id="12n-GM-X82">
                                 <connections>
-                                    <segue destination="E19-4u-zsv" kind="show" id="sC2-2H-p8u"/>
+                                    <segue destination="E19-4u-zsv" kind="show" identifier="orderHistorySegue" id="sC2-2H-p8u"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="cartIcon" id="uSC-xP-WfK">
                                 <connections>
-                                    <segue destination="jlt-MT-zKr" kind="show" id="jr7-ZY-bb0"/>
+                                    <segue destination="jlt-MT-zKr" kind="show" identifier="cartControllerSegue" id="jr7-ZY-bb0"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
